@@ -1,6 +1,6 @@
 <?php
 
-include "dbh.class.php";
+include "setDbh.class.php";
 
-$test = new Dbh();
-$test->connect();
+$test = new SetDbh();
+$test->registration("X", "Z", "login", "login@login.hu", "12345");
