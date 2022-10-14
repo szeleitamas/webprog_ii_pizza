@@ -1,6 +1,6 @@
 <?php
 
-include "dbh.class.php";
+include "dbh.classes.php";
 
 class SetDbh extends Dbh {
 

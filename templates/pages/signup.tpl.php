@@ -3,7 +3,7 @@
 <div class="login">
     <div class="login-signup">
         <h3>Regisztráció</h3>
-        <form action="" method="post">
+        <form action="../../includes/signup.inc.php" method="post">
             <input type="text" name="firstname" placeholder="vezetéknév">
             <input type="text" name="lastname" placeholder="keresztnév">
             <input type="text" name="loginname" placeholder="bejelentkező név">

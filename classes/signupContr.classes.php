@@ -1,6 +1,6 @@
 <?php
 
-class SignupContr {
+class SignupContr extends Signup {
 
     private $firstname;
     private $lastname;
@@ -23,14 +23,28 @@ class SignupContr {
         $this->password = $password;
     }
 
-    private function regUser() {
-        if ($this->emptyInput() == false) {
+    public function signUpUser() {
+        if($this->uidTakenCheck() == false) {
+            header("location: ../../login.php?error=usertaken");
             exit();
         }
-        if ($this->invalidLoginName() == false)
+       $this->setUser($this->firstname, $this->lastname, $this->loginname, $this->email, $this->password);
     }
 
+    private function uidTakenCheck() {
+        $result;
+        if (!$this->checkUser($this->loginname))
+        {
+            $result = false;
+        }
+        else
+        {
+            $result = true;
+        }
+        return $result;
+    }
 
+    /*
     //üres beviteli mező vizsgálata
     private function emptyInput() {
         $result;
@@ -66,6 +80,6 @@ class SignupContr {
         }
         return $result;
     }
-
+    */
 
 }

@@ -15,7 +15,7 @@ class Dbh {
             return $pdo;
         }
         catch (PDOException $exception) {
-            echo "Nincs adatbáziskapcsolat!" . $exception->getMessage();
+            echo "Nincs adatbáziskapcsolat!". $exception->getMessage();
         }
     }
 }

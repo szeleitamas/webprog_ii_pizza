@@ -10,11 +10,12 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['logi
     $password = sha1($_POST['password']);
 
     //instantiate SignUpControll class
-    include "signup.class.php";
-    include "signupContr.class.php";
+    include "../classes/dbh.classes.php";
+    include "../classes/signup.classes.php";
+    include "../classes/signupContr.classes.php";
     $signup = new SignupContr($firstname, $lastname, $loginname, $email, $password);
     //running error handlers and user signup
-
-    //going to back to front page
-
+    $signup->signUpUser();
 }
+
+
