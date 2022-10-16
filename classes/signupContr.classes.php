@@ -25,7 +25,7 @@ class SignupContr extends Signup {
 
     public function signUpUser() {
         if($this->uidTakenCheck() == false) {
-            header("location: ../../login.php?error=usertaken");
+            //header("location: ../../login.php?error=usertaken");
             exit();
         }
        $this->setUser($this->firstname, $this->lastname, $this->loginname, $this->email, $this->password);
