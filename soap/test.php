@@ -12,21 +12,17 @@
      $options = array(
 
    'keep_alive' => false,
-    //'trace' =>true,
-    //'connection_timeout' => 5000,
-    //'cache_wsdl' => WSDL_CACHE_NONE,
+    'trace' =>true,
+    'connection_timeout' => 5000,
+    'cache_wsdl' => WSDL_CACHE_NONE,
    );
-  $client = new SoapClient('http://localhost/pizza/szerver/mobilok.wsdl',$options);
+  $client = new SoapClient('http://localhost/git/pizza/soap/pizza.wsdl',$options);
 
-  $markak = $client->getmarkak();
+  $kategoriak = $client->getKategoria();
   echo "<pre>";
-  print_r($markak);
+  print_r($kategoriak);
   echo "</pre>";
 
-  $modellek = $client->getmodellek('001');
-  echo "<pre>";
-  print_r($modellek);
-  echo "</pre>";
   ?>
 
   <body>

@@ -17,6 +17,8 @@ $footer = array(
 $pages = array(
     '/' => array('file' => 'cover', 'title' => 'Címlap', 'menun' => array(1,1)),
     'news' => array('file' => 'news', 'title' => 'Híroldal', 'menun' => array(1,0)),
+    'order' => array('file' => 'order', 'title' => 'Rendelés (SOAP)', 'menun' => array(1,0)),
+    'mnb' => array('file' => 'mnb', 'title' => 'MNB', 'menun' => array(1,0)),
     'login' => array('file' => 'login', 'title' => 'Belépés', 'menun' => array(1,0)),
     'logout' => array('file' => 'logout', 'title' => 'Kilépés', 'menun' => array(0,1)),
 
