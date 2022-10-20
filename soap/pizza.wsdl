@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/pizza/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/pizza/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost/pizza/soap/">
+      <xsd:complexType name="Pizza">
+        <xsd:all/>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getkategoriaRequest"/>
+  <wsdl:message name="getkategoriaResponse">
+    <wsdl:part name="getkategoriaReturn" type="tns:Pizza"/>
+  </wsdl:message>
+  <wsdl:portType name="PizzaPortType">
+    <wsdl:operation name="getkategoria">
+      <wsdl:documentation/>
+      <wsdl:input message="tns:getkategoriaRequest"/>
+      <wsdl:output message="tns:getkategoriaResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PizzaBinding" type="tns:PizzaPortType">
+    <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getkategoria">
+      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/pizza/soap/server.php?method=getkategoria" style="rpc"/>
+      <wsdl:input>
+        <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Pizza">
+    <wsdl:documentation/>
+    <wsdl:port name="PizzaPort" binding="tns:PizzaBinding">
+      <soap-env:address location="http://localhost/pizza/soap/server.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

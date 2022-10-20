@@ -83,33 +83,34 @@ body {
 }
 
 /* Footer */
-.footer {
-    padding: 20px;
-    text-align: center;
+.footerbox {
+    width: 100%;
+    height: 120px;
     background: #ddd;
-    height: 200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-end;
 }
 .footeritem{
-    width: 250px;
+    width: 33%;
     text-align: center;
 }
-.footer img{
+.footeritem img {
     height: 40px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #copyright{
     font-size: 10px;
+    color: white;
     background-color: black;
     text-align: center;
     padding: 10px;
 }
 
+
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-    .row, .navbar, .headerbox {
+    .row, .navbar, .headerbox, footer {
         flex-direction: column;
     }
     .headerbox-text {
@@ -118,5 +119,11 @@ body {
     .headerbox img {
         height: 50%;
         width: 50%;
+    }
+    .footeritem img {
+        height: 20%;
+    }
+    .footeritem-text {
+        font-size: 10px;
     }
 }

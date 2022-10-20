@@ -11,7 +11,7 @@ class Dbh {
             $dsn = 'mysql:host=' .$this->hostName .';dbname=' .$this->dbName;
             $pdo = new PDO($dsn, $this->userName, $this->password);
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            //echo "Adatbáziskapcsolat Ok";
+            echo "Adatbáziskapcsolat Ok";
             return $pdo;
         }
         catch (PDOException $exception) {
