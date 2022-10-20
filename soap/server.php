@@ -1,6 +1,6 @@
 <?php
-require("../classes/dbh.classes.php");
-require("../classes/pizza.classes.php");
-$server = new SoapServer("pizza.wsdl");
-$server->setClass("Pizza");
-$server->handle();
+	require("../classes/ordercontroll.classes.php");
+	$server = new SoapServer("ordercontroll.wsdl");
+	$server->setClass('OrderControll');
+	$server->handle();
+?>
