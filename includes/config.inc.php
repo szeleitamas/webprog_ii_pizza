@@ -4,7 +4,7 @@ $title = array(
 );
 
 $header = array(
-    'logo' => 'pizza_header.webp',
+    'logo' => 'pizza_header.jpg',
     'logoalt' => 'logo',
 );
 
