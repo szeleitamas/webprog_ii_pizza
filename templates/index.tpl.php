@@ -19,29 +19,24 @@ session_start();
 </head>
 <body>
 <header>
-		<div class="headerbox">
-				<div class="session">
-					<h5>Resize the browser window to see the responsive effect.</h5>
-				</div>
-				<div class="headerbox-img">
-					<img  class="logo" src="./images/<?=$header['logo']?>" alt="<?=$header['logoalt']?>">
-				</div>
-				<div class="row">
-					<nav>
-							<ul class="navbar">
-									<?php foreach ($pages as $url => $page) { ?>
-											<?php if(! isset($_SESSION['login']) && $page['menun'][0] || isset($_SESSION['login']) && $page['menun'][1]) { ?>
-													<li<?= (($page == $search) ? ' class="active"' : '') ?>>
-															<a href="<?= ($url == '/') ? '.' : ('?page=' . $url) ?>">
-																	<?= $page['title'] ?></a>
-													</li>
-											<?php } ?>
-									<?php } ?>
-							</ul>
-					</nav>
-				</div>
-    </div>
-</header>
+		<div class="session-bar">
+				Session
+		</div>
+		<header class="header">
+				<p>Header</p>
+		</header>
+		<nav class="flex-nav">
+				<ul>
+					<?php foreach ($pages as $url => $page) { ?>
+					<?php if(! isset($_SESSION['login']) && $page['menun'][0] || isset($_SESSION['login']) && $page['menun'][1]) { ?>
+					<li<?= (($page == $search) ? ' class="active"' : '') ?>>
+						<a href="<?= ($url == '/') ? '.' : ('?page=' . $url) ?>">
+						<?= $page['title'] ?></a>
+					</li>
+					<?php } ?>
+					<?php } ?>
+				</ul>
+		</nav>
 <div id="content">
     <?php include("./templates/pages/{$search['file']}.tpl.php"); ?>
 </div>
@@ -49,7 +44,7 @@ session_start();
 <div class="footerbox">
 		<div class="footeritem">
 				<div class="footeritem-logo">
-						<img src="./images/<?=$footer['phoneicon']?>" alt="<?=$footer['phonealt']?>">
+						<img src="./img/<?=$footer['phoneicon']?>" alt="<?=$footer['phonealt']?>">
 				</div>
 				<div class="footeritem-text">
             <?php if(isset($footer['phone'])) { ?><?= $footer['phone'] ?> <?php } ?>
@@ -57,7 +52,7 @@ session_start();
 		</div>
 		<div class="footeritem">
 				<div class="footeritem-logo">
-						<img src="./images/<?=$footer['mailicon']?>" alt="<?=$footer['mailalt']?>">
+						<img src="./img/<?=$footer['mailicon']?>" alt="<?=$footer['mailalt']?>">
 				</div>
 				<div class="footeritem-text">
             <?php if(isset($footer['mail'])) { ?><?= $footer['mail'] ?> <?php } ?>
@@ -65,7 +60,7 @@ session_start();
 		</div>
 		<div class="footeritem">
 				<div class="footeritem-logo">
-						<img src="./images/<?=$footer['gpsicon']?>" alt="<?=$footer['gpsalt']?>">
+						<img src="./img/<?=$footer['gpsicon']?>" alt="<?=$footer['gpsalt']?>">
 				</div>
 				<div class="footeritem-text">
             <?php if(isset($footer['gps'])) { ?><?= $footer['gps'] ?> <?php } ?>
