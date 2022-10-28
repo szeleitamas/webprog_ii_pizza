@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/pizza/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/pizza/soap/">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/git/pizza/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/git/pizza/soap/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://localhost/pizza/soap/">
+    <xsd:schema targetNamespace="http://localhost/git/pizza/soap/">
       <xsd:complexType name="Kategoriak">
         <xsd:all>
           <xsd:element name="hibakod" type="xsd:int" minOccurs="0" maxOccurs="1"/>
@@ -65,8 +65,6 @@
   <wsdl:message name="getRendelesResponse">
     <wsdl:part name="getRendelesReturn" type="tns:Rendelesek"/>
   </wsdl:message>
-  <wsdl:message name="connectRequest"/>
-  <wsdl:message name="connectResponse"/>
   <wsdl:portType name="OrderControllPortType">
     <wsdl:operation name="getKategoria">
       <wsdl:documentation/>
@@ -83,16 +81,11 @@
       <wsdl:input message="tns:getRendelesRequest"/>
       <wsdl:output message="tns:getRendelesResponse"/>
     </wsdl:operation>
-    <wsdl:operation name="connect">
-      <wsdl:documentation/>
-      <wsdl:input message="tns:connectRequest"/>
-      <wsdl:output message="tns:connectResponse"/>
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="OrderControllBinding" type="tns:OrderControllPortType">
     <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="getKategoria">
-      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/pizza/soap/server.php?method=getKategoria" style="rpc"/>
+      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/git/pizza/soap/server.php?method=getKategoria" style="rpc"/>
       <wsdl:input>
         <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
       </wsdl:input>
@@ -101,7 +94,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getPizza">
-      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/pizza/soap/server.php?method=getPizza" style="rpc"/>
+      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/git/pizza/soap/server.php?method=getPizza" style="rpc"/>
       <wsdl:input>
         <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
       </wsdl:input>
@@ -110,16 +103,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getRendeles">
-      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/pizza/soap/server.php?method=getRendeles" style="rpc"/>
-      <wsdl:input>
-        <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="connect">
-      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/pizza/soap/server.php?method=connect" style="rpc"/>
+      <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/git/pizza/soap/server.php?method=getRendeles" style="rpc"/>
       <wsdl:input>
         <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
       </wsdl:input>
@@ -131,7 +115,7 @@
   <wsdl:service name="OrderControll">
     <wsdl:documentation/>
     <wsdl:port name="OrderControllPort" binding="tns:OrderControllBinding">
-      <soap-env:address location="http://localhost/pizza/soap/server.php"/>
+      <soap-env:address location="http://localhost/git/pizza/soap/server.php"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

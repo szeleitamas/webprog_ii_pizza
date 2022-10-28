@@ -3,8 +3,8 @@
 	require '../classes/ordercontroll.classes.php';
 	require 'WSDLDocument/WSDLDocument.php';
 	$wsdl = new WSDLDocument('OrderControll',
-		"http://localhost/pizza/soap/server.php",
-		"http://localhost/pizza/soap/");
+		"http://localhost/git/pizza/soap/server.php",
+		"http://localhost/git/pizza/soap/");
 	$wsdl->formatOutput = true;
 	$wsdlfile = $wsdl->saveXML();
 	echo $wsdlfile;

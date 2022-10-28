@@ -16,14 +16,23 @@ session_start();
 			if(file_exists('./styles/'.$search['file'].'.css')) { ?>
 					<link rel="stylesheet" href="./styles/<?=$search['file']?>.css" type="text/css">
 			<?php } ?>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="wrapper">
 <header>
 		<div class="session-bar">
+				<p>
+            <?php if(isset($header['text'])) { ?><?= $header['text'] ?> <?php } ?>
+				</p>
 				Session
 		</div>
 		<div class="banner">
-				<p>Banner</p>
+				<img src="./img/<?=$header['banner']?>" alt="<?=$header['banneralt']?>">
+				<p>
+        	<?php if(isset($header['text'])) { ?><?= $header['text'] ?> <?php } ?>
+				</p>
 		</div>
 		<nav class="flex-nav">
 				<ul>
@@ -42,7 +51,7 @@ session_start();
     <?php include("./templates/pages/{$search['file']}.tpl.php"); ?>
 </div>
 <footer>
-<div class="footerbox">
+<div class="flex-container-footer">
 		<div class="footeritem">
 				<div class="footeritem-logo">
 						<img src="./img/<?=$footer['phoneicon']?>" alt="<?=$footer['phonealt']?>">
