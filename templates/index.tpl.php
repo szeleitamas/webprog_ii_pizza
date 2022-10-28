@@ -22,9 +22,9 @@ session_start();
 		<div class="session-bar">
 				Session
 		</div>
-		<header class="header">
-				<p>Header</p>
-		</header>
+		<div class="banner">
+				<p>Banner</p>
+		</div>
 		<nav class="flex-nav">
 				<ul>
 					<?php foreach ($pages as $url => $page) { ?>
@@ -37,6 +37,7 @@ session_start();
 					<?php } ?>
 				</ul>
 		</nav>
+</header>
 <div id="content">
     <?php include("./templates/pages/{$search['file']}.tpl.php"); ?>
 </div>

@@ -1,15 +1,14 @@
 <?php
 ?>
 
-<section class="hero">
+<section class="content-top-text">
 		<h2>Érdekelnek a receptek?</h2>
 		<p>Egy finom pizza ebédre vagy vacsorára? Lenyűgözően egyszerű receptünkkel isteni olasz pizzát készíthetsz. Ezt muszáj kipróbálnod!</p>
 </section>
-<div class="flex-container wrapper">
-		<section class="content">
-				<img class="img-pizza" src="../../img/pizza1.jpg" alt="Pizza">
+<div class="flex-container content">
+		<section class="content-left-text">
 		</section>
-		<aside class="sidebar">
+		<aside class="content-right-text">
 				<h3>Hozzávalók</h3>
 				<p>A tésztához</p>
 				<ul>
@@ -37,7 +36,7 @@
 				<h3>Elkészítés</h3>
 		</aside>
 </div>
-<section class="text">
+<section class="content-under-text">
 		<p>100 ml langyos vízben kevés cukorral futtassuk fel az élesztőt. A tészta többi hozzávalóit nagyobb keverőtálba mérjük, majd hozzáöntjük a megkelt élesztőt. Hozzáadunk még egy kevés vizet, hogy a tészta lágyabb, de nem túl ragadós tésztává váljon, majd kidagasztjuk. Ruhával lefedve, a duplájára kelesztjük, átgyúrjuk, végül ismét megkelesztjük. A tésztából kerek lapot formázunk. Kikeverjük a szósz hozzávalóit és a tésztalapra kenjük, rászórjuk a sonkát és a sajtot is. Előmelegített sütőben, 250 fokon 8-10 perc alatt megsütjük. Tálalás előtt, frissen szórjuk meg a rukkolával, és még több parmezánnal.</p>
 </section>
 
