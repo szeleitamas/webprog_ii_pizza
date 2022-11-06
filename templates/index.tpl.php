@@ -1,5 +1,6 @@
 <?php
 session_start();
+if(file_exists('./logicals/'.$search['file'].'.php')) { include("./logicals/{$search['file']}.php");}
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +25,8 @@ session_start();
 <header>
 		<div class="session-bar">
 				<p>
-            <?php if(isset($header['text'])) { ?><?= $header['text'] ?> <?php } ?>
+            <?php if(isset($_SESSION['login'])) { ?>Bejelentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
 				</p>
-				Session
 		</div>
 		<div class="banner">
 				<img src="./img/<?=$header['banner']?>" alt="<?=$header['banneralt']?>">

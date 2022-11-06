@@ -1,6 +1,6 @@
 <?php
 	//error_reporting(0);
-	require '../classes/ordercontroll.classes.php';
+	require '../classes/soap.class.php';
 	require 'WSDLDocument/WSDLDocument.php';
 	$wsdl = new WSDLDocument('OrderControll',
 		"http://localhost/git/pizza/soap/server.php",

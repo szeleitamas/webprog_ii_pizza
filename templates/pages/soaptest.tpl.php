@@ -2,9 +2,9 @@
      $options = array(
    
    'keep_alive' => false,
-    //'trace' =>true,
-    //'connection_timeout' => 5000,
-    //'cache_wsdl' => WSDL_CACHE_NONE,
+    'trace' =>true,
+    'connection_timeout' => 5000,
+    'cache_wsdl' => WSDL_CACHE_NONE,
    );
   $client = new SoapClient('http://localhost/git/pizza/soap/ordercontroll.wsdl',$options);
   
