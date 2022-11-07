@@ -4,8 +4,9 @@ $title = array(
 );
 
 $header = array(
-    'logo' => 'pizza_header.jpg',
-    'logoalt' => 'logo',
+    'banner' => 'pizza_banner.jpg',
+    'banneralt' => 'pizza banner',
+    'text' => 'Neumann Pizza',
 );
 
 $footer = array(
@@ -25,13 +26,13 @@ $footer = array(
 $pages = array(
     '/' => array('file' => 'cover', 'title' => 'Címlap', 'menun' => array(1,1)),
     'news' => array('file' => 'news', 'title' => 'Híroldal', 'menun' => array(1,0)),
-    'ordercontroll' => array('file' => 'ordercontroll', 'title' => 'Rendelés ellenőrzés (SOAP)', 'menun' => array(1,0)),
+    'soap' => array('file' => 'soap', 'title' => 'SOAP', 'menun' => array(1,0)),
     'soaptest' => array('file' => 'soaptest', 'title' => 'SOAP tesztelés', 'menun' => array(1,0)),
     'mnb' => array('file' => 'mnb', 'title' => 'MNB', 'menun' => array(1,0)),
-    'login' => array('file' => 'login', 'title' => 'Belépés', 'menun' => array(1,0)),
-    'logout' => array('file' => 'logout', 'title' => 'Kilépés', 'menun' => array(0,1)),
-
-    'signup' => array('file' => 'signup', 'title' => '', 'menun' => array(0,0)),
+    'belreg' => array('file' => 'belreg', 'title' => 'Belépés', 'menun' => array(1,0)),
+    'kilepes' => array('file' => 'kilepes', 'title' => 'Kilépés', 'menun' => array(0,1)),
+    'regisztracio' => array('file' => 'regisztracio', 'title' => '', 'menun' => array(0,0)),
+    'belepes' => array('file' => 'belepes', 'title' => '', 'menun' => array(0,0)),
 );
 
 $error_page = array ('file' => '404', 'title' => 'A keresett oldal nem található!');

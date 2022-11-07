@@ -1,6 +1,8 @@
 <?php
 
-class OrderControll
+include ("dbh.class.php");
+
+class OrderControll extends Dbh
 {
     /**
      * @return Kategoriak
@@ -13,12 +15,8 @@ class OrderControll
             "kategoriak" => array());
 
         try {
-            $dbh = new PDO('mysql:host=szelei.hu;dbname=szeleihu_pizza', 'szeleihu_pizza', 'pY67ZdFQNQnZ',
-                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-
             $sql = "select nev, ar from kategoria order by nev";
-            $sth = $dbh->prepare($sql);
+            $sth = $this->connect()->prepare($sql);
             $sth->execute(array());
             $eredmeny['kategoriak'] = $sth->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -44,21 +42,17 @@ class OrderControll
             "pizzak" => array());
 
         try {
-            $dbh = new PDO('mysql:host=szelei.hu;dbname=szeleihu_pizza', 'szeleihu_pizza', 'pY67ZdFQNQnZ',
-                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-
             $eredmeny["nev"] = $nev;
 
             $sql = "select nev, ar from kategoria where nev = :nev";
-            $sth = $dbh->prepare($sql);
+            $sth = $this->connect()->prepare($sql);
             $sth->execute(array(":nev" => $nev));
             $kategoria = $sth->fetch(PDO::FETCH_ASSOC);
             $kategorianev = $kategoria["nev"];
             $eredmeny["nev"] = $kategoria["nev"];
 
             $sql = "select nev, vegetarianus from pizza where kategorianev = :kategorianev order by nev";
-            $sth = $dbh->prepare($sql);
+            $sth = $this->connect()->prepare($sql);
             $sth->execute(array(":kategorianev" => $kategorianev));
             $eredmeny['pizzak'] = $sth->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -86,21 +80,17 @@ class OrderControll
             "rendelesek" => array());
 
         try {
-            $dbh = new PDO('mysql:host=szelei.hu;dbname=szeleihu_pizza', 'szeleihu_pizza', 'pY67ZdFQNQnZ',
-                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-
             $eredmeny["nev"] = $nev;
 
             $sql = "select nev, vegetarianus from pizza where nev = :nev";
-            $sth = $dbh->prepare($sql);
+            $sth = $this->connect()->prepare($sql);
             $sth->execute(array(":nev" => $nev));
             $rendeles = $sth->fetch(PDO::FETCH_ASSOC);
             $pizzanev = $rendeles["nev"];
             $eredmeny["nev"] = $rendeles["nev"];
 
             $sql = "select darab, felvetel, kiszallitas from rendeles where pizzanev = :pizzanev";
-            $sth = $dbh->prepare($sql);
+            $sth = $this->connect()->prepare($sql);
             $sth->execute(array(":pizzanev" => $pizzanev));
             $eredmeny['rendelesek'] = $sth->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -114,7 +104,8 @@ class OrderControll
 
 }
 
-class Kategoria {
+class Kategoria extends Dbh
+{
     /**
      * @var string
      */
@@ -126,7 +117,8 @@ class Kategoria {
     public $ar;
 }
 
-class Kategoriak {
+class Kategoriak extends Dbh
+{
     /**
      * @var integer
      */
@@ -142,7 +134,7 @@ class Kategoriak {
      */
     public $kategoriak;
 }
-class Pizza {
+class Pizza extends Dbh{
     /**
      * @var string
      */
@@ -154,7 +146,8 @@ class Pizza {
     public $vegetarianus;
 }
 
-class Pizzak {
+class Pizzak extends Dbh
+{
     /**
      * @var integer
      */
@@ -181,7 +174,8 @@ class Pizzak {
     public $pizzak;
 }
 
-Class Rendeles {
+Class Rendeles extends Dbh
+{
     /**
      * @var int
      */
@@ -203,7 +197,8 @@ Class Rendeles {
     public $kiszallitas;
 }
 
-class Rendelesek {
+class Rendelesek extends Dbh
+{
     /**
      * @var integer
      */

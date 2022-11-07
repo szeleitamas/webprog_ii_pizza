@@ -1,6 +1,7 @@
 <?php
 
-class Dbh {
+class Dbh
+{
     private $hostName = "szelei.hu";
     private $dbName = "szeleihu_pizza";
     private $userName = "szeleihu_pizza";
@@ -11,7 +12,7 @@ class Dbh {
             $dsn = 'mysql:host=' .$this->hostName .';dbname=' .$this->dbName;
             $pdo = new PDO($dsn, $this->userName, $this->password);
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            echo "Adatbáziskapcsolat Ok";
+            $pdo->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
             return $pdo;
         }
         catch (PDOException $exception) {

@@ -1,3 +1,11 @@
+.flex-container-ordercontroll {
+    padding-bottom: 10px;
+}
+h1 {
+    margin: 0;
+    padding: 20px;
+}
+
 table {
     border-collapse: collapse;
     margin-bottom: 50px;
@@ -18,4 +26,13 @@ td {
     color: #7274A5;
     background-color: beige;
     border-top: 3px solid #FFFFFF;
+}
+
+/* Flex */
+@media screen and (min-width: 640px) {
+    .flex-container-ordercontroll {
+        display: flex;
+        gap: 50px;
+        padding: 20px 40px;
+    }
 }
