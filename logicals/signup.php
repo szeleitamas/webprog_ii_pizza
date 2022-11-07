@@ -1,21 +1,18 @@
 <?php
 
-if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['loginname']) && isset($_POST['email']) && isset($_POST['password'])) {
+include "../classes/registration.classes.php";
 
-    //grabbing the data
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $loginname = $_POST['loginname'];
-    $email = $_POST['email'];
-    $password = sha1($_POST['password']);
 
-    //instantiate SignUpControll class
-    include "../classes/dbh.classes.php";
-    include "../classes/signup.classes.php";
-    include "../classes/signupContr.classes.php";
-    $signup = new SignupContr($firstname, $lastname, $loginname, $email, $password);
-    //running error handlers and user signup
-    $signup->signUpUser();
+if (isset($_POST['vezeteknev']) && isset($_POST['utonev']) && isset($_POST['felhasznalonev']) && isset($_POST['jelszo'])) {
+    $vezeteknev = $_POST['vezeteknev'];
+    $utonev = $_POST['utonev'];
+    $felhasznalonev = $_POST['felhasznalonev'];
+    $jelszo = $_POST['jelszo'];
+
+    $controllers = new RegController($vezeteknev, $utonev, $felhasznalonev, $jelszo);
+    $controllers->meghiv();
+    $v = new RegView();
+    $v->kiir();
 }
 
 
