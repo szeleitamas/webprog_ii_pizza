@@ -1,6 +1,6 @@
 <?php
 
-include ("../classes/dbh.class.php");
+include "./classes/dbh.class.php";
 
 class RegModel extends Dbh
 {

@@ -12,7 +12,7 @@
     </fieldset>
 </form>
 <h3>Regisztráció</h3>
-<form action = "../../logicals/regisztracio.php" method = "post">
+<form action = "?page=regisztracio" method = "post">
     <fieldset>
         <legend>Regisztráció</legend>
         <br>

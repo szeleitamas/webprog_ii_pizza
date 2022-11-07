@@ -15,9 +15,9 @@ header, #content, footer {
     color: #FFFFFF;
     text-align: end;
 }
-.session-bar p {
+/*.session-bar p {
     display: none;
-}
+}*/
 .banner img {
     display: none;
 }
@@ -121,9 +121,10 @@ footer {
     }
     .session-bar p {
         display: flex;
+        justify-content: flex-end;
         padding-left: 20px;
-        font-family: 'Dancing Script', cursive;
-        font-size: 40px;
+        /*font-family: 'Dancing Script', cursive;*/
+        font-size: 15px;
         font-weight: bolder;
         margin: 0;
     }
