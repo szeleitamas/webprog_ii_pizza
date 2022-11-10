@@ -1,51 +1,69 @@
 <pre>
 <?php
-	print_r($_POST);
 	$client = new SoapClient("http://www.mnb.hu/arfolyamok.asmx?WSDL");
 	$currency = (array)simplexml_load_string($client->GetCurrencies()->GetCurrenciesResult);
-?>
-		<?php
-/*
-		<h4>Válasszon Pénznemet:</h4>
-		<form name="currenciesselect" method="POST">
-						<select name="currencies" onchange="javascript:currenciesselect.submit();">
-								<option value="">Válasszon pénznemet</option>
-								<?php
+
+	$penznem = array();
+
 
 								foreach($currency as $currency => $currencies) {
                    foreach ($currencies as $key => $item) {
-                       echo '<option value="' . $item . '">' . $item . '</option>';
+											 $penznem[] = $item;
                    }
                 }
-                $currency1 = $_POST['currencies'];
 								?>
-						</select>
-		</form>
-*/?>
-		<h4>Válasszon másik pénznemet:</h4>
-		<form name="currencies2select" method="POST">
-						<select name="currencies2" onchange="javascript:currencies2select.submit();">
-								<option value="">Válasszon pénznemet</option>
-								<?php
 
-                foreach($currency as $currency => $currencies2) {
-                    foreach ($currencies2 as $key => $item) {
-                        echo '<option value="' . $item . '">' . $item . '</option>';
-                    }
-                }
-                $currency2 = $_POST['currencies'];
-                ?>
-						</select>
-		</form>
+<h3>Dátum választás</h3>
+<form action="?page=mnb2" method="post">
+
+
+    <fieldset>
+        <legend>Dátum választás</legend>
+        <br>
+		<label>Pénznem 1: <select name="penz1">
+						<?php foreach($penznem as $penz) { ?>
+								<option value="<?php echo $penz ?>"><?php echo $penz ?></option>
+            <?php } ?>
+				</select></label>
+														<label>Pénznem 2: <select name="penz2">
+						<?php foreach($penznem as $penz) { ?>
+								<option value="<?php echo $penz ?>"><?php echo $penz ?></option>
+            <?php } ?>
+																</select></label>
+<label>Év: <select name="ev">
+<?php for ($ev=1900; $ev<=2022; $ev++) { ?>
+		<option value="<?php echo $ev ?>"><?php echo $ev ?></option>
+<?php } ?>
+</select></label>
+<label>Hónap: <select name="honap">
+<?php for ($ho=1; $ho<=12; $ho++) { ?>
+		<option value="<?php echo $ho ?>"><?php echo $ho ?></option>
+<?php } ?>
+</select></label>
+<label>Nap: <select name="nap">
+<?php for ($nap=1; $nap<=31; $nap++) { ?>
+		<option value="<?php echo $nap ?>"><?php echo $nap ?></option>
+<?php } ?>
+
+</select></label>
+				<input type="submit" name="mnb" value="Küldés">
+		</fieldset>
+</form>
+
+
+
+
+
 <?php
+/*
 $startdate = "2016-11-14";
 $enddate = "2016-11-16";
 $client = new SoapClient("http://www.mnb.hu/arfolyamok.asmx?WSDL");
-$currencies3 = (array)simplexml_load_string($client->GetExchangeRates(array('startDate' => $startdate, 'endDate' => $enddate, 'currencyNames' => $currency1,$currency2))->GetExchangeRatesResult);
+$currencies3 = (array)simplexml_load_string($client->GetExchangeRates(array('startDate' => $ev.'-'.$honap.'-'.$nap, 'endDate' => $enddate, 'currencyNames' => $item1,$item2))->GetExchangeRatesResult);
 
 print_r($currencies3);
 
-
+*/
 
 ?>
 </pre>

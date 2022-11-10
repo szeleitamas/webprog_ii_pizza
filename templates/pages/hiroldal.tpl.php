@@ -1,8 +1,5 @@
 <?php
 
-include "./models/hirmodel.class.php";
-include "./controllers/hircontrol.class.php";
-
 ?>
 <h3>Híroldal</h3>
 <form action = "?page=hiroldal" method = "post">

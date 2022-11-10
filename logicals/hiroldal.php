@@ -2,7 +2,7 @@
 
 include "./models/hirmodel.class.php";
 include "./controllers/hircontrol.class.php";
-//include "./views/view.class.php";
+include "./views/hirview.class.php";
 
 if (isset($_POST['ertekeles']) && isset($_POST['uzenet'])) {
     $ertekeles = $_POST['ertekeles'];
