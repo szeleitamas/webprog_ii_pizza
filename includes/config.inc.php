@@ -33,7 +33,6 @@ $pages = array(
     'kilepes' => array('file' => 'kilepes', 'title' => 'Kilépés', 'menun' => array(0,1)),
     'regisztracio' => array('file' => 'regisztracio', 'title' => '', 'menun' => array(0,0)),
     'belepes' => array('file' => 'belepes', 'title' => '', 'menun' => array(0,0)),
-    'belepes' => array('file' => 'belepes', 'title' => '', 'menun' => array(0,0)),
     'mnblekeres' => array('file' => 'mnblekeres', 'title' => '', 'menun' => array(0,0)),
     'hiroldallekeres' => array('file' => 'hiroldallekeres', 'title' => '', 'menun' => array(0,0)),
 );
