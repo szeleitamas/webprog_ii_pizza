@@ -18,6 +18,7 @@ if(file_exists('./logicals/'.$search['file'].'.php')) { include("./logicals/{$se
 					<link rel="stylesheet" href="./styles/<?=$search['file']?>.css" type="text/css">
 			<?php } ?>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.google.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
