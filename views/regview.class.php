@@ -7,11 +7,11 @@ class RegView extends RegModel
         $regcheck = $this->RegUser();
         if (isset($regcheck) && $regcheck)
         {
-            echo "A regisztráció sikerült!";
+            echo "A regisztráció sikeres!";
         }
         elseif (isset($regcheck) && !$regcheck)
         {
-            echo "A regisztráció nem sikerült, próbálja újra!";
+            echo "A regisztráció nem sikerült, kérem próbálja újra!";
         }
     }
 }
