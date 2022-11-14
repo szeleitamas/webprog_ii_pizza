@@ -1,9 +1,16 @@
 <?php
 
-class LogView
+class LogView extends LogModel
 {
-    public function kiir() { ?>
-
-    <?php
+    public function kiir() {
+        $logcheck = $this->logUser();
+        if (isset($logcheck) && $logcheck)
+        {
+            echo "A belépés sikerült!";
+        }
+        elseif (isset($logcheck) && !$logcheck)
+        {
+            echo "A belépés nem sikerült, próbálja újra!";
+        }
     }
 }

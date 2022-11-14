@@ -1,3 +1,5 @@
 <?php
-echo "siker";
+
+$ki = new RegView();
+$ki->kiir();
 

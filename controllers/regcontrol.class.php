@@ -17,19 +17,5 @@ class RegController extends RegModel
 
     public function meghiv_reg() {
         $this->regUser();
-        /*
-        $nezet = new RegView();
-        $usercheck = $this->checkUser();
-        if (isset($usercheck) && $usercheck) {
-            $userreg = $this->regUser();
-            if (isset($userreg) && $userreg) {
-                $nezet->regUserRendben();
-            } elseif (isset($userreg) && !$userreg) {
-                $nezet->regUserHiba();
-            }
-        } elseif (isset($usercheck) && !$usercheck) {
-            $nezet->checkUserHiba();
-        }
-        */
     }
 }
