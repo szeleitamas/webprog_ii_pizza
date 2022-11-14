@@ -29,7 +29,6 @@ $pages = array(
     'soap' => array('file' => 'soap', 'title' => 'SOAP', 'menun' => array(1,1)),
     'soaptest' => array('file' => 'soaptest', 'title' => 'SOAP tesztelés', 'menun' => array(1,1)),
     'mnb' => array('file' => 'mnb', 'title' => 'MNB', 'menun' => array(1,1)),
-    'mnb' => array('file' => 'mnb', 'title' => 'MNB', 'menun' => array(1,1)),
     'belreg' => array('file' => 'belreg', 'title' => 'Belépés', 'menun' => array(1,0)),
     'kilepes' => array('file' => 'kilepes', 'title' => 'Kilépés', 'menun' => array(0,1)),
     'regisztracio' => array('file' => 'regisztracio', 'title' => '', 'menun' => array(0,0)),
