@@ -6,11 +6,11 @@ class LogView extends LogModel
         $logcheck = $this->logUser();
         if (isset($logcheck) && $logcheck)
         {
-            echo "A belépés sikerült!";
+            echo "A belépés sikeres!";
         }
         elseif (isset($logcheck) && !$logcheck)
         {
-            echo "A belépés nem sikerült, próbálja újra!";
+            echo "A belépés nem sikerült, kérem próbálja újra!";
         }
     }
 }
