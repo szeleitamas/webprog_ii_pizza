@@ -3,8 +3,8 @@
 	require '../classes/soap.class.php';
 	require 'WSDLDocument/WSDLDocument.php';
 	$wsdl = new WSDLDocument('OrderControll',
-		"http://localhost/git/pizza/soap/server.php",
-		"http://localhost/git/pizza/soap/");
+		"https://lzuec6.szelei.hu/soap/server.php",
+		"https://lzuec6.szelei.hu/soap/");
 	$wsdl->formatOutput = true;
 	$wsdlfile = $wsdl->saveXML();
 	echo $wsdlfile;

@@ -6,7 +6,7 @@
     'connection_timeout' => 5000,
     'cache_wsdl' => WSDL_CACHE_NONE,
    );
-  $client = new SoapClient('http://localhost/git/pizza/soap/ordercontroll.wsdl',$options);
+  $client = new SoapClient('https://lzuec6.szelei.hu/soap/ordercontroll.wsdl',$options);
   
   $kategoriak = $client->getKategoria();
   echo "<pre>";

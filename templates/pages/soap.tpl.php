@@ -1,6 +1,6 @@
 <?php
 
-$client = new SoapClient('http://localhost/git/pizza/soap/ordercontroll.wsdl');
+$client = new SoapClient('https://lzuec6.szelei.hu/soap/ordercontroll.wsdl');
 $kategoriak = $client->getKategoria();
 if(isset($_POST['kategoria']) && trim($_POST['kategoria']) != "")
     $pizzak = $client->getPizza($_POST['kategoria']);

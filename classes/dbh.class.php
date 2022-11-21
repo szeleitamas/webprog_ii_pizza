@@ -2,7 +2,7 @@
 
 class Dbh
 {
-    private $hostName = "szelei.hu";
+    private $hostName = "localhost";
     private $dbName = "szeleihu_pizza";
     private $userName = "szeleihu_pizza";
     private $password = "pY67ZdFQNQnZ";
