@@ -2,22 +2,16 @@
 
 class RegView extends RegModel
 {
-    public function m() {
-        include ("../templates/pages/regisztracio.tpl.php");
-    }
-
-    public function regUserRendben()
+    public function kiir()
     {
-        echo "A regisztráció sikeres!";
-    }
-
-    public function regUserHiba()
-    {
-        echo "A regisztráció nem sikerült!";
-    }
-
-    public function checkUserHiba()
-    {
-        echo "Van már ilyen nevű felhasználó!";
+        $regcheck = $this->RegUser();
+        if (isset($regcheck) && $regcheck)
+        {
+            echo "A regisztráció sikeres!";
+        }
+        elseif (isset($regcheck) && !$regcheck)
+        {
+            echo "A regisztráció nem sikerült, kérem próbálja újra!";
+        }
     }
 }

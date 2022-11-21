@@ -72,3 +72,4 @@ Tündi kedvence	király	0
 Tüzes halál	király	0
 Vega	lovag	1
 Zöldike	főnemes	1
+Barni király 1

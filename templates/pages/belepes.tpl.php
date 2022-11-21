@@ -1,2 +1,5 @@
 <?php
-echo "siker";
+
+$ki = new LogView();
+$ki->kiir();
+

@@ -2,7 +2,7 @@
 
 ?>
 <h3>Híroldal</h3>
-<form action = "?page=hiroldal" method = "post">
+<form action = "?page=hiroldallekeres" method = "post">
     <fieldset>
         <legend>Híroldal</legend>
         <br>

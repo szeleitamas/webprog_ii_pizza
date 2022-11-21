@@ -14,7 +14,7 @@ $footer = array(
     'ceg' => 'WEBPROG-II-ZH-I.',
     'phoneicon' => 'phone_icon.png',
     'phonealt' => 'telefon',
-    'phone' => '+36 80 000 0000',
+    'phone' => '+36 80 123 456',
     'mailicon' => 'mail_icon.png',
     'mailalt' => 'mail',
     'mail' => '00@00000.hu',
@@ -33,7 +33,8 @@ $pages = array(
     'kilepes' => array('file' => 'kilepes', 'title' => 'Kilépés', 'menun' => array(0,1)),
     'regisztracio' => array('file' => 'regisztracio', 'title' => '', 'menun' => array(0,0)),
     'belepes' => array('file' => 'belepes', 'title' => '', 'menun' => array(0,0)),
-    'mnb2' => array('file' => 'mnb2', 'title' => '', 'menun' => array(0,0)),
+    'mnblekeres' => array('file' => 'mnblekeres', 'title' => '', 'menun' => array(0,0)),
+    'hiroldallekeres' => array('file' => 'hiroldallekeres', 'title' => '', 'menun' => array(0,0)),
 );
 
 $error_page = array ('file' => '404', 'title' => 'A keresett oldal nem található!');
